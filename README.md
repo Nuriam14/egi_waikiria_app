@@ -13,7 +13,7 @@ Este proyecto toma como base el prototipo de alta fidelidad realizado en Figma y
 👥 Integrantes
 Rocío Correa
 
-Nuria
+Nuria Moreno
 
 🛠️ Tecnologías utilizadas
 Tecnología	Uso
@@ -163,8 +163,9 @@ Backend o API
 
 Gestión de stock
 
-📸 Capturas
-(Próximamente)
+Video de presentación:
+https://drive.google.com/file/d/1vePGc5E4zSzok4repgDuOQ6EgUE0OiVm/view?usp=sharing
+
 
 📝 Licencia
 Proyecto académico. Todos los derechos reservados © 2026 Waikiria.
