@@ -18,6 +18,34 @@ class Producto {
     required this.subcategoria,
     required this.talles,
   });
+
+  // --- MÉTODOS PARA PERSISTENCIA (NUEVOS) ---
+
+  /// Convierte el Producto a un Map para guardarlo como JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'nombre': nombre,
+      'precio': precio,
+      'imagen': imagen,
+      'categoria': categoria,
+      'subcategoria': subcategoria,
+      'talles': talles,
+    };
+  }
+
+  /// Crea un Producto a partir de un Map (JSON)
+  factory Producto.fromJson(Map<String, dynamic> json) {
+    return Producto(
+      id: json['id'] as String,
+      nombre: json['nombre'] as String,
+      precio: (json['precio'] as num).toDouble(), // Casteo de seguridad
+      imagen: json['imagen'] as String,
+      categoria: json['categoria'] as String,
+      subcategoria: json['subcategoria'] as String,
+      talles: List<String>.from(json['talles']), // Convertimos la lista dinámica a List<String>
+    );
+  }
 }
 
 /// Productos de Waikiria.
@@ -78,7 +106,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Jean',
     talles: ['36', '38', '40'],
   ),
-
   // ============ PANTALONES / Baggy ============
   Producto(
     id: '7',
@@ -89,7 +116,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Baggy',
     talles: ['36', '38', '40', '42'],
   ),
-
   // ============ PANTALONES / Faldas ============
   Producto(
     id: '8',
@@ -100,7 +126,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Falda',
     talles: ['S', 'M', 'L'],
   ),
-
   // ============ REMERAS Y BLUSAS / Camisas ============
   Producto(
     id: '9',
@@ -111,7 +136,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Camisa',
     talles: ['S', 'M', 'L'],
   ),
-
   // ============ REMERAS Y BLUSAS / Blusas ============
   Producto(
     id: '10',
@@ -122,7 +146,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Blusa',
     talles: ['S', 'M', 'L'],
   ),
-
   // ============ REMERAS Y BLUSAS / Musculosas ============
   Producto(
     id: '11',
@@ -133,7 +156,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Musculosa',
     talles: ['S', 'M', 'L'],
   ),
-
   // ============ REMERAS Y BLUSAS / Tops ============
   Producto(
     id: '12',
@@ -144,7 +166,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Top',
     talles: ['S', 'M', 'L'],
   ),
-
   // ============ ABRIGOS / Buzos ============
   Producto(
     id: '13',
@@ -155,7 +176,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Buzo',
     talles: ['S', 'M', 'L', 'XL'],
   ),
-
   // ============ ABRIGOS / Morleys ============
   Producto(
     id: '14',
@@ -175,7 +195,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Morley',
     talles: ['S', 'M', 'L', 'XL'],
   ),
-
   // ============ ACCESORIOS / Carteras ============
   Producto(
     id: '16',
@@ -186,7 +205,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Cartera',
     talles: ['Único'],
   ),
-
   // ============ ACCESORIOS / Cinturones ============
   Producto(
     id: '17',
@@ -197,7 +215,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Cinturón',
     talles: ['Único'],
   ),
-
   // ============ ACCESORIOS / Aros ============
   Producto(
     id: '18',
@@ -208,7 +225,6 @@ const List<Producto> productosDemo = [
     subcategoria: 'Aros',
     talles: ['Único'],
   ),
-
   // ============ ACCESORIOS / Bolsos ============
   Producto(
     id: '19',
